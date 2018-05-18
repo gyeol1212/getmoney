@@ -4,7 +4,8 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    # 로그인한 정보랑 같은 사람이 쓴 것만 표시
+    @posts = Post.where(user_id:current_user.id)
   end
 
   # GET /posts/1
@@ -12,8 +13,16 @@ class PostsController < ApplicationController
   def show
   end
 
+  #내가 쓴거 말고 다른 사람이 쓴 것도 보기
+  def all
+    @posts = Post.all
+  end
   # GET /posts/new
   def new
+    @post = Post.new
+  end
+
+  def new2
     @post = Post.new
   end
 
@@ -26,6 +35,9 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
 
+    # 현재 로그인한 유저 id 저장
+    @post.user_id = current_user.id
+
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
@@ -36,6 +48,7 @@ class PostsController < ApplicationController
       end
     end
   end
+  
 
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
