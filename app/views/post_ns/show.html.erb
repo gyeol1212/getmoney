@@ -15,7 +15,9 @@
   <%= @post_n.etc %>
 </p>
 
-위에 내용 다 지우고 바로 명단 확인하는 폼
+
+<a href="/post_ns/<%= @post_n.id%>/check_n">명단확인</a>
+
 
 <%= link_to 'Edit', edit_post_n_path(@post_n) %> |
 <%= link_to 'Back', post_ns_path %>

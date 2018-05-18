@@ -1,2 +1,41 @@
-<h1>CheckN#index</h1>
-<p>Find me in app/views/check_n/index.html.erb</p>
+
+
+<form action="/post_ns/<%= @post_n.id%>/check_n" method="post">
+    <input type="string" name="gets">
+    <input type="submit" value="입력">
+</form>
+
+
+
+안 낸사람
+
+<% @checks_sort.each do |x| %>
+    <% if x.moeny != 1 %>
+        <form action="/post_ns/<%= @post_n.id%>/check_n/yes/<%=x.id%>" mehtod="post">
+            <%= x.name %>
+            <input type="submit" value="확인">
+        </form>
+    <% end %>
+<% end %>
+<br>ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ<br>
+
+낸사람
+<% @checks.each do |x| %>
+    <% if x.moeny == 1 %>
+        <form action="/post_ns/<%= @post_n.id%>/check_n/no/<%=x.id%>" mehtod="post">
+            <%= x.name %>
+            <input type="submit" value="확인">
+        </form>
+    <% end %>
+<% end %>
+<br>
+<a class="nav-link" href="/post_ns">목록보기</a>
+<br>
+
+<% @checks.each do |x| %>
+이름 <%= x.name%> <br>
+<a href="/post_ns/<%= @post_n.id%>/check_n/edit/<%=x.id%>">수정하기</a> <br>
+<a href="/post_ns/<%= @post_n.id%>/check_n/destroy/<%=x.id%>">삭제하기</a><br>
+-----------------------<br>
+<% end %>
+ 
