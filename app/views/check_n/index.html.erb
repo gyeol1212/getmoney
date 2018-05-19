@@ -14,6 +14,8 @@
         <form action="/post_ns/<%= @post_n.id%>/check_n/yes/<%=x.id%>" mehtod="post">
             <%= x.name %>
             <input type="submit" value="확인">
+            <%= link_to '삭제', post_n_check_n_path(@post_n.id,x.id), method: :delete%>
+
         </form>
     <% end %>
 <% end %>
@@ -25,6 +27,8 @@
         <form action="/post_ns/<%= @post_n.id%>/check_n/no/<%=x.id%>" mehtod="post">
             <%= x.name %>
             <input type="submit" value="확인">
+            <%= link_to '삭제', post_n_check_n_path(@post_n.id,x.id), method: :delete%>
+            
         </form>
     <% end %>
 <% end %>
@@ -32,10 +36,3 @@
 <a class="nav-link" href="/post_ns">목록보기</a>
 <br>
 
-<% @checks.each do |x| %>
-이름 <%= x.name%> <br>
-<a href="/post_ns/<%= @post_n.id%>/check_n/edit/<%=x.id%>">수정하기</a> <br>
-<a href="/post_ns/<%= @post_n.id%>/check_n/destroy/<%=x.id%>">삭제하기</a><br>
------------------------<br>
-<% end %>
- 

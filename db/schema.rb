@@ -79,13 +79,6 @@ ActiveRecord::Schema.define(version: 20180519140316) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "results", force: :cascade do |t|
-    t.integer  "post_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_results_on_post_id"
-  end
-
   create_table "tables", force: :cascade do |t|
     t.string   "item"
     t.integer  "EA"

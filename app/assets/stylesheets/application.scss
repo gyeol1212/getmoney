@@ -7,9 +7,10 @@ table{
     text-align: center;
 }
 
-.container {
-    text-align: center;
-}
+.ff{
+    background-color: transparent !important;
+    color: white !important;
+    }
 
 .undernavhr{
     color:light-gray;
@@ -22,25 +23,49 @@ table{
 
 .navi
 {font-family: "Noto Sans KR" ;
-font-weight: 500 ;
-color: white ; 
+font-weight: 300 ;
+color: gainsboro ; 
 }
 
 .navi1
 {font-family: "Noto Sans KR" ;
-font-weight: 700 ;
+font-weight: 400 ;
 font-size: 25px ; 
-color: white ; 
+color: gainsboro ; 
+}
+
+.bt {
+    font-family: "Arvo" ;
+    color: white ;
+    font-weight: 300 ;
+    opacity: 0.8 ;
 }
 
 
+.inf {
+    border-right-color: gray;
+    border-left-color: gray;
+    border-width: 0.5px;
+    border-right-style: solid;
+    border-left-style: solid;
+}
+
+
+
+.ft {
+    color: gray ;
+    font-size: 13px ;
+}
+
+
+
 body 
+
 {background-image: url("index_background.jpg");
 background-size: 100%;
 background-color: #566389;
 }
 
-body {background-color: #566389;}
 
 /* unvisited link */
 a:link {
@@ -69,3 +94,56 @@ a:visited {
     text-decoration: none;
 }
 
+
+
+a1 {
+    color: whitesmoke;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 80px 20%;
+  }
+
+.titlemake {
+    padding: 20px 30px;
+    width: 70%;
+}
+
+.contentmake {
+    padding: 20px 30px;
+    width: 70%;
+
+.bdsize {
+    max-width: 500px;
+    width: 300px;
+    margin-top: 120px;
+    margin-left: 200px;
+
+}
+
+.formbg {
+    background-color: transparent;
+}
+.texttr {
+    opacity: 0.5;
+}
+
+.textsize {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mt-7 {
+    margin-top: 7erm;
+}
+
+.inputsize {
+    height: 50px;
+    width: 300px;
+}
+
+.divposition {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
