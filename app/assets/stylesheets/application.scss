@@ -8,9 +8,18 @@ table{
 }
 
 .ff{
-    background-color: transparent !important;
-    color: white !important;
+    background-color: white !important;
+    opacity: 0.5 ;
+    color: black !important;
+    font-weight:bold ;
     }
+
+.undernavhr{
+    color:light-gray;
+    
+}
+
+
 
 //-sy
 
@@ -32,6 +41,11 @@ color: gainsboro ;
     color: white ;
     font-weight: 300 ;
     opacity: 0.8 ;
+}
+
+.topnav {
+    background-color: black ;
+    opacity: 0.5 ;
 }
 
 
@@ -142,9 +156,30 @@ a1 {
     justify-content: center;
 }
 
+
 .cc {
     background-color: white !important;
     opacity: 0.5;
     color: black !important;
     font-weight:bold;
+
+.bg-tr {
+    background: rgba(163, 179, 176, 0.192);
+}
+
+.font25 {
+    font-size: 25px;
+}
+
+.font20 {
+    font-size:20px;
+}
+
+.plr-4 {
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.bgradius {
+    border-radius : 3rem;
 }

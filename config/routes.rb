@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'result/index'
+
   get 'divide/create'
 
   get 'divide/destroy'
@@ -28,7 +30,6 @@ Rails.application.routes.draw do
       get 'all'
     end
   end
-
   get 'check/index'
 
   get 'posts/:post_id/check/yes/:check_id' => 'check#yes'
@@ -41,7 +42,7 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :table , only: [:create, :destroy]
-    resources :check
+    resources :check, :result
   end
   get 'home/index'
 

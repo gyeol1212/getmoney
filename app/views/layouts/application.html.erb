@@ -9,9 +9,10 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   </head>
 
-   <body class="text-center text-white container"> 
-      <div class="topnav sticky-top">
-            <nav class="navbar">
+
+   <body class="text-center text-white"> 
+      <div class="topnav sticky-top ">
+            <nav class="navbar" >
                 <!--왼쪽-->
                 <div class="container text-center">
                     <div>
@@ -20,18 +21,20 @@
                     </div>
                     <div>
 
-                    <a class="navi" href="/posts">기획 </a>
-                    <a class="navi" href="/post_ns">결산</a>
-                    <a class="navi" href="/freeposts"> 자유게시판</a>
+                    <a class="navi" href="/post_ns">Dutch Pay</a>
+                    &nbsp &nbsp
+                    <a class="navi" href="/posts">Budget Plan</a>
+                    &nbsp &nbsp
+                    <a class="navi" href="/freeposts">Board</a>
+                    
 
 
                     </div>
                     
                 <!--icon-->
                     <div>
-                        <a class="navi" href="/posts">내 페이지</a>
                       <% if user_signed_in? %>
-                    <%= link_to '로그아웃', destroy_user_session_path, method: :delete, class: " navi" %>
+                    &nbsp&nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp<%= link_to '로그아웃', destroy_user_session_path, method: :delete, class: " navi3" %>
                     <% else %>
                       <%= link_to '로그인', new_user_session_path, class: "navi" %>
                       <%= link_to '회원가입', new_user_registration_path, class: "navi" %>

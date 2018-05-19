@@ -7,6 +7,7 @@ class PostsController < ApplicationController
     # 로그인한 정보랑 같은 사람이 쓴 것만 표시
     @posts = Post.where(user_id:current_user.id)
     # @post.tables = Post.tables.find(params[:id])
+  
   end
 
   # GET /posts/1
@@ -17,7 +18,14 @@ class PostsController < ApplicationController
   #내가 쓴거 말고 다른 사람이 쓴 것도 보기
   def all
     @posts = Post.all
+    if params[:search]
+      @posts = Post.search(params[:search]).order("created_at DESC")
+    else
+      @posts = Post.all.order('created_at DESC')
+    end
   end
+  
+
   # GET /posts/new
   def new
     @post = Post.new
