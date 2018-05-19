@@ -33,10 +33,10 @@ class CheckController < ApplicationController
   end
 
   def destroy
-    @check=Check.find(params[:check_id])
+    @check=Check.find(params[:id])
     @check.destroy
 
-    redirect_to '/'
+    redirect_to :back
   end
 
   def create

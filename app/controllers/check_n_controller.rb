@@ -33,10 +33,10 @@ class CheckNController < ApplicationController
   end
 
   def destroy
-    @check_n=CheckN.find(params[:check_id])
+    @check_n=CheckN.find(params[:id])
     @check_n.destroy
 
-    redirect_to '/'
+    redirect_to :back
   end
 
   def create
