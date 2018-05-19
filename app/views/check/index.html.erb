@@ -1,39 +1,42 @@
 
+<div class=>
+    <form action="/posts/<%= @post.id%>/check" method="post" class="my-5 ">
+        <input type="string" name="gets" class=" texttr inputsize" >
+        <input type="submit" value="입력">
+    </form>
+</div>
 
-<form action="/posts/<%= @post.id%>/check" method="post">
-    <input type="string" name="gets">
-    <input type="submit" value="입력">
-</form>
 
-안 낸사람
+<div class="d-flex justify-content-around">
+    <div class="divposition">
+       <p> 안 낸사람 </p>
+         <% @checks_sort.each do |x| %>
+            <% if x.money != 1 %>
+                <form action="/posts/<%= @post.id%>/check/yes/<%=x.id%>" mehtod="post">
+                    <%= x.name %>
+                    <input type="submit" value="확인">
+                    <%= link_to '삭제', post_check_path(@post.id,x.id), method: :delete%>
 
-<% @checks_sort.each do |x| %>
-    <% if x.money != 1 %>
-        <form action="/posts/<%= @post.id%>/check/yes/<%=x.id%>" mehtod="post">
-            <%= x.name %>
-            <input type="submit" value="확인">
-        <form action="/posts/<%= @post.id%>/check/yes/<%=x.id%>" mehtod="delete">
-            <input type="submit" value="삭제">
-        </form>
-    <% end %>
-<% end %>
+                </form>
+            <% end %>
+        <% end %>
+    </div>
+    <div class="divposition">
+        낸사람
+        <% @checks.each do |x| %>
+            <% if x.money == 1 %>
+                <form action="/posts/<%= @post.id%>/check/no/<%=x.id%>" mehtod="post">
+                    <%= x.name %>
+                    <input type="submit" value="확인">
+                    <%= link_to '삭제', post_check_path(@post.id,x.id), method: :delete%>
+                    
+                </form>
+            <% end %>
+        <% end %>
+    </div>
+</div>   
+        <br>
+        <a class="nav-link" href="/posts/<%= @post.id%>">뒤로가기</a>
+        <a class="nav-link" href="/posts">글목록보기</a>
 
-<br>ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ<br>
-
-낸사람
-<% @checks.each do |x| %>
-    <% if x.money == 1 %>
-        <form action="/posts/<%= @post.id%>/check/no/<%=x.id%>" mehtod="post">
-            <%= x.name %>
-            <input type="submit" value="확인">
-        <form action="/posts/<%= @post.id%>/check/yes/<%=x.id%>" mehtod="delete">
-            <input type="submit" value="삭제">
-        </form>
-    <% end %>
-<% end %>
-<br>
-<a class="nav-link" href="/posts/<%= @post.id%>">뒤로가기</a>
-<a class="nav-link" href="/posts">글목록보기</a>
-<br>
------------------------<br>
  
