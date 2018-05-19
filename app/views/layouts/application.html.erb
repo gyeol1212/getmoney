@@ -9,23 +9,27 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   </head>
 
-   <body class>
+   <body class="text-center text-white container"> 
       <div class="topnav sticky-top">
             <nav class="navbar">
                 <!--왼쪽-->
-                <div class="container">
+                <div class="container text-center">
                     <div>
-                    <a class="navi1" href="/">아마겟돈</a>
+                    
+                    <a class="navi1" href="/"><%= image_tag("dollar_icon.svg", :alt => "rss feed", :size => "40x30") %>아마겟돈</a>
                     </div>
                     <div>
-                    <a class="navi" href="/posts">기획</a>
+
+                    <a class="navi" href="/posts">기획 </a>
                     <a class="navi" href="/post_ns">결산</a>
-                    <a class="navi" href="/freeposts">자유게시판</a>
+                    <a class="navi" href="/freeposts"> 자유게시판</a>
+
+
                     </div>
                     
                 <!--icon-->
                     <div>
-                        <a class="navi" href="/posts">내페이지</a>
+                        <a class="navi" href="/posts">내 페이지</a>
                       <% if user_signed_in? %>
                     <%= link_to '로그아웃', destroy_user_session_path, method: :delete, class: " navi" %>
                     <% else %>
@@ -36,6 +40,27 @@
                 </div>    
             </nav>     
         </div>
-    <%= yield %>
+    <div class="pb-5">
+      <%= yield %>
+    </div>
+   
+    <!--Footer-->
+    
+    <div class="navbar fixed-bottom">
+      <div class="ft container d-flex bd-highlight">
+        <div class="mr-auto p-2 bd-highlight">
+            NE<span class=text-warning>X</span>T X
+            <strong>멋쟁이사자처럼</strong>
+        </div>
+        <div class="p-2 bd-highlight">
+            © 2018 Copyright:
+            <strong>AMAGET$.com</strong>
+        </div>
+       
+      </div>
+    </div>  
+    <!--/.Copyright -->
+    <!--/.Footer-->
+                      
   </body>
 </html>
