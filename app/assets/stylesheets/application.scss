@@ -1,6 +1,17 @@
 @import url('http://fonts.googleapis.com/earlyaccess/notosanskr.css');
 @import "bootstrap";
 
+//sy
+table{
+    color:white;
+    text-align: center;
+}
+
+.container {
+    text-align: center;
+}
+
+//-sy
 
 .navi
 {font-family: "Noto Sans KR" ;
@@ -15,11 +26,6 @@ font-size: 25px ;
 color: white ; 
 }
 
-
-.index_name
-{
-
-}
 
 body 
 {background-image: url("index_background.jpg");
