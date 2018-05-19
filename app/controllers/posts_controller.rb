@@ -35,7 +35,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-
+    @post.user = current_user
     # 현재 로그인한 유저 id 저장
     @post.user_id = current_user.id
 
@@ -83,6 +83,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:date, :title, :etc)
+      params.require(:post).permit(:date, :title, :etc, :username)
     end
 end
