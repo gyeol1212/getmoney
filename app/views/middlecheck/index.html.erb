@@ -1,0 +1,47 @@
+<%=form_for Table.new, url:post_table_index_path(post_id: @post.id) do |f|%>
+  <%=f.label "항목"%>
+  <%=f.text_field :item %>
+  
+  <%=f.label "수량"%>
+  <%=f.number_field :EA %>
+
+  <%=f.label "가격"%>  
+  <%=f.number_field :price %>
+  
+  <%=f.label "비고"%>
+  <%=f.text_field :etc %>  
+  <%=f.submit '제출'%>
+<% end %>
+
+<table class="table">
+  <tr>
+    <th>항목</th>
+    <th>수량</th>
+    <th>가격</th>
+    <th>총액</th>
+    <th>비고</th>
+    <th>삭제</th>
+  </tr>
+  <% a = 0%>
+  <%@post.tables.each do |table|%>
+  
+
+    <tr>
+    
+      <td><%=table.item%></td>
+      <td><%=table.EA%></td>
+      <td><%=table.price%></td>
+      <% table.total = table.EA*table.price  %>
+      <td><%=table.total%></td>
+      <% a = a + table.total%>
+      <td><%=table.etc%></td>
+      <td>
+        <%= link_to '삭제', post_table_path(@post.id,table.id), method: 'delete'%>
+      </td>
+    </tr>
+  <% end%>
+  <% @post.total_price = a %>
+  <tr>
+    <th><%=@post.tables.sum("total")%></th>
+  </tr>
+</table>

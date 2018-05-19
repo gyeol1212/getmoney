@@ -14,6 +14,10 @@ class PostsController < ApplicationController
   def show
   end
 
+  #GET /posts/1? /middle 그 중간확인을 위한 것
+  def pyo
+  end
+
   #내가 쓴거 말고 다른 사람이 쓴 것도 보기
   def all
     @posts = Post.all

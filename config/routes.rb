@@ -35,6 +35,7 @@ Rails.application.routes.draw do
 
   get 'posts/:post_id/check/no/:check_id' => 'check#no'
 
+
   get 'table/create'
 
   get 'table/destroy'
