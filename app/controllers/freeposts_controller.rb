@@ -4,6 +4,7 @@ class FreepostsController < ApplicationController
   # GET /freeposts
   # GET /freeposts.json
   def index
+    
     @freeposts = Freepost.all
   end
 
@@ -24,7 +25,10 @@ class FreepostsController < ApplicationController
   # POST /freeposts
   # POST /freeposts.json
   def create
+    
     @freepost = Freepost.new(freepost_params)
+    @freepost.username = current_user.username
+    @freepost.user_id = current_user.id
 
     respond_to do |format|
       if @freepost.save
@@ -69,6 +73,6 @@ class FreepostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def freepost_params
-      params.require(:freepost).permit(:title, :content)
+      params.require(:freepost).permit(:title, :content, :username)
     end
 end

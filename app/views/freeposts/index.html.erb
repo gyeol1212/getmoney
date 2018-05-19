@@ -2,11 +2,11 @@
 
 <h1>Freeposts</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Content</th>
+      <th>제목</th>
+      <th>작성자</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,16 +14,14 @@
   <tbody>
     <% @freeposts.each do |freepost| %>
       <tr>
-        <td><%= freepost.title %></td>
-        <td><%= freepost.content %></td>
-        <td><%= link_to 'Show', freepost %></td>
-        <td><%= link_to 'Edit', edit_freepost_path(freepost) %></td>
-        <td><%= link_to 'Destroy', freepost, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <td><%= link_to freepost.title, freepost %></td>
+        <td><%= freepost.username %></td>
+        
+       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Freepost', new_freepost_path %>
+<%= link_to '새 글 작성', new_freepost_path %>
