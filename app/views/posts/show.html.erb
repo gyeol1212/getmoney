@@ -15,6 +15,8 @@
   <%= @post.etc %>
 </p>
 
+
+
 <%=form_for Table.new, url:post_table_index_path(post_id: @post.id) do |f|%>
   <%=f.label "항목"%>
   <%=f.text_field :item %>
@@ -27,7 +29,6 @@
   
   <%=f.label "비고"%>
   <%=f.text_field :etc %>  
-  
   <%=f.submit '제출'%>
 <% end %>
 
@@ -42,24 +43,25 @@
   </tr>
   <% a = 0%>
   <%@post.tables.each do |table|%>
+  
+
     <tr>
     
       <td><%=table.item%></td>
       <td><%=table.EA%></td>
       <td><%=table.price%></td>
-     <% table.total = table.EA*table.price%> 
+      <% table.total = table.EA*table.price  %>
       <td><%=table.total%></td>
-    <% a = a + table.total%>
+      <% a = a + table.total%>
       <td><%=table.etc%></td>
       <td>
         <%= link_to '삭제', post_table_path(@post.id,table.id), method: 'delete'%>
       </td>
     </tr>
-  
   <% end%>
   <% @post.total_price = a %>
   <tr>
-    <th><%=@post.total_price%></th>
+    <th><%=@post.tables.sum("total")%></th>
   </tr>
 </table>
 
