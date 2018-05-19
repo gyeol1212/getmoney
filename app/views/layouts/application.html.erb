@@ -9,30 +9,33 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   </head>
 
-   <body class="text-center container">
-      
-        <div class="cover-container">
-          <header class="masthead mb-auto">
-            <div class="inner">
-              <nav class="nav nav-masthead">
-                <div class="d-flex justify-content-start">
-                  <a class="nav-link navi" href="/">Tothefirstpart</a>
-                  <a class="nav-link navi" href="/freeposts">자유게시판</a>
-                </div>
-                <div class="d-flex justify-content-end">   
-                  <a class="nav-link navi" href="/posts">myPage</a>
+   <body class>
+      <div class="topnav sticky-top">
+            <nav class="navbar">
+                <!--왼쪽-->
+                <div class="container">
+                    <div>
+                    <a class="navi1" href="/">아마겟돈</a>
+                    </div>
+                    <div>
+                    <a class="navi" href="/posts">기획</a>
+                    <a class="navi" href="/posts_ns">결산</a>
+                    <a class="navi" href="/freeposts">자유게시판</a>
+                    </div>
+                    
+                <!--icon-->
+                    <div>
+                        <a class="navi" href="/posts">내페이지</a>
                       <% if user_signed_in? %>
-                    <%= link_to '로그아웃', destroy_user_session_path, method: :delete, class: "nav-link navi" %>
+                    <%= link_to '로그아웃', destroy_user_session_path, method: :delete, class: " navi" %>
                     <% else %>
-                      <%= link_to '로그인', new_user_session_path, class: "nav-link navi" %>
-                      <%= link_to '회원가입', new_user_registration_path, class: "nav-link navi" %>
-                    <% end %>
-                </div>     
-                       
-              </nav>
-            </div> 
-          </header>
-        </div>   
+                      <%= link_to '로그인', new_user_session_path, class: "navi" %>
+                      <%= link_to '회원가입', new_user_registration_path, class: "navi" %>
+                    <% end %>   
+                    </div>
+                </div>    
+            </nav>     
+        </div>
     <%= yield %>
   </body>
 </html>
