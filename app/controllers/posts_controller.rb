@@ -25,6 +25,7 @@ class PostsController < ApplicationController
       @posts = Post.all.order('created_at DESC')
     end
   end
+  
 
   # GET /posts/new
   def new
