@@ -28,16 +28,17 @@ class PostNsController < ApplicationController
     @post_n = PostN.new(post_n_params)
     # 현재 로그인한 유저 id 저장
     @post_n.user_id = current_user.id
-
+    # @post_n.etc = params[:post_id]
     respond_to do |format|
       if @post_n.save
-        format.html { redirect_to @post_n, notice: 'Post n was successfully created.' }
+        format.html { redirect_to post_n_check_n_index_path(@post_n.id), notice: 'Post n was successfully created.' }
         format.json { render :show, status: :created, location: @post_n }
       else
         format.html { render :new }
         format.json { render json: @post_n.errors, status: :unprocessable_entity }
       end
     end
+    
   end
 
   # PATCH/PUT /post_ns/1
