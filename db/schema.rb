@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180518131954) do
+ActiveRecord::Schema.define(version: 20180519073607) do
 
   create_table "check_ns", force: :cascade do |t|
     t.string   "name"
@@ -36,6 +36,15 @@ ActiveRecord::Schema.define(version: 20180518131954) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["freepost_id"], name: "index_comments_on_freepost_id"
+  end
+
+  create_table "divides", force: :cascade do |t|
+    t.integer  "total"
+    t.integer  "members"
+    t.integer  "PostN_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["PostN_id"], name: "index_divides_on_PostN_id"
   end
 
   create_table "freeposts", force: :cascade do |t|
