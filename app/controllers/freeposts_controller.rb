@@ -3,9 +3,18 @@ class FreepostsController < ApplicationController
 
   # GET /freeposts
   # GET /freeposts.json
-  def index
+  # def index
     
+  #   @freeposts = Freepost.all
+  # end
+
+  def index
     @freeposts = Freepost.all
+    if params[:search]
+      @freeposts = Freepost.search(params[:search]).order("created_at DESC")
+    else
+      @freeposts = Freepost.all.order('created_at DESC')
+    end
   end
 
   # GET /freeposts/1

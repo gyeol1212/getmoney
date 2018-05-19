@@ -5,8 +5,7 @@ class Post < ApplicationRecord
     belongs_to :user  
 
     def self.search(search)
-        where("name LIKE ?", "%#{search}%") 
-        where("content LIKE ?", "%#{search}%")
+        where("title || contentLIKE ?", "%#{search}%") 
       end
 
 end
