@@ -14,14 +14,24 @@ table{
     font-weight:bold ;
     }
 
-.undernavhr{
-    color:light-gray;
-    
+
+thead {
+    background-color: rgba(255, 255, 255, 0.384);
+    text-align: center;
+
 }
 
-
-
+.inputbox {
+    background-color:tansparent;
+}
 //-sy
+
+
+.ff{
+    background-color: transparent !important;
+    color: white !important;
+    }
+
 
 .navi
 {font-family: "Noto Sans KR" ;
@@ -162,6 +172,7 @@ a1 {
     opacity: 0.5;
     color: black !important;
     font-weight:bold;
+}
 
 .bg-tr {
     background: rgba(163, 179, 176, 0.192);
