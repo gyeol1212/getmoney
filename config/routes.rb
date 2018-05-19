@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'divide/create'
+
+  get 'divide/destroy'
+
   devise_for :users
   get 'comments/create'
 

@@ -72,6 +72,6 @@ class PostNsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_n_params
-      params.require(:post_n).permit(:date, :title, :etc)
+      params.require(:post_n).permit(:date, :title, :etc, :total_price, :member)
     end
 end

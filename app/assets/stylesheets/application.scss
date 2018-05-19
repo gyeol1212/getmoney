@@ -4,9 +4,17 @@
 
 .navi
 {font-family: "Noto Sans KR" ;
-font-weight: 700 ;
+font-weight: 500 ;
 color: white ; 
 }
+
+.navi1
+{font-family: "Noto Sans KR" ;
+font-weight: 700 ;
+font-size: 25px ; 
+color: white ; 
+}
+
 
 .index_name
 {
@@ -18,3 +26,33 @@ body
 background-size: 100%;
 background-color: #566389;
 }
+
+body {background-color: #566389;}
+
+/* unvisited link */
+a:link {
+    color: white;
+}
+
+/* visited link */
+a:visited {
+    color: white;
+}
+
+/* mouse over link */
+a:hover {
+    color: white;
+}
+
+/* selected link */
+a:active {
+    color: white;
+}
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
