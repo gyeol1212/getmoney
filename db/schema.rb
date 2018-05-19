@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180519140316) do
+ActiveRecord::Schema.define(version: 20180519185525) do
 
   create_table "check_ns", force: :cascade do |t|
     t.string   "name"
@@ -79,6 +79,13 @@ ActiveRecord::Schema.define(version: 20180519140316) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "results", force: :cascade do |t|
+    t.integer  "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_results_on_post_id"
+  end
+
   create_table "tables", force: :cascade do |t|
     t.string   "item"
     t.integer  "EA"
@@ -88,6 +95,7 @@ ActiveRecord::Schema.define(version: 20180519140316) do
     t.integer  "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "member"
     t.index ["post_id"], name: "index_tables_on_post_id"
   end
 

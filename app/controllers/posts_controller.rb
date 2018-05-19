@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+ 
   end
 
   #내가 쓴거 말고 다른 사람이 쓴 것도 보기
@@ -55,6 +56,8 @@ class PostsController < ApplicationController
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
+
+
   end
   
 
@@ -90,7 +93,7 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:date, :title, :etc, :username)
+      params.require(:post).permit(:date, :title, :etc, :member, :peoplenumber)
     end
 end
 
