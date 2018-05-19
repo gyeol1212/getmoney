@@ -20,7 +20,7 @@
         <td><%= post.date %></td>
         <td><%= post.title %></td>
         <td><%= post.etc %></td>
-        <td><%= post.total_price %></td>
+        <td><%= post.tables.sum("total") %></td>
         <td><%= post.member %></td>
         
         <td><%= link_to 'Show', post %></td>

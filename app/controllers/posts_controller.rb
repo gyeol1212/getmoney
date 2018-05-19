@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   def index
     # 로그인한 정보랑 같은 사람이 쓴 것만 표시
     @posts = Post.where(user_id:current_user.id)
+    # @post.tables = Post.tables.find(params[:id])
   end
 
   # GET /posts/1
