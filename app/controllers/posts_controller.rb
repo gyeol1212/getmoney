@@ -86,3 +86,4 @@ class PostsController < ApplicationController
       params.require(:post).permit(:date, :title, :etc, :username)
     end
 end
+
