@@ -1,4 +1,4 @@
-
+<div id="hidden">
 <p>
   <strong>Date:</strong>
   <%= @post.date %>
@@ -13,7 +13,6 @@
   <strong>Etc:</strong>
   <%= @post.etc %>
 </p>
-
 
 
 <%=form_for Table.new, url:post_table_index_path(post_id: @post.id) do |f|%>
@@ -31,6 +30,11 @@
   <%=f.submit '제출'%>
 <% end %>
 
+</div>
+
+
+
+
 <table class="table">
   <tr>
     <th>항목</th>
@@ -40,6 +44,7 @@
     <th>비고</th>
     <th>삭제</th>
   </tr>
+
   <% a = 0%>
   <%@post.tables.each do |table|%>
   
@@ -58,11 +63,36 @@
       </td>
     </tr>
   <% end%>
+
   <% @post.total_price = a %>
   <tr>
+    <th>총 사용비용</th>
+    <th></th>
+    <th></th>
     <th><%=@post.tables.sum("total")%></th>
+    <th></th>
   </tr>
+ 
+  <%# 인원수추가  %>
+
+ <tr>
+    <th>인당얼마?</th>
+    <th></th>
+    <th></th>
+    <th>
+    <% if @post.member.to_i != 0 %>
+    <%=@post.tables.sum("total").to_i / @post.member.to_i  %>
+    <% else %>
+    <%= puts "Error" %>
+    <%end%>
+    </th>
+    <th></th>
+    <th></th>
+  </tr>
+  
 </table>
+
+<br>
 
 
 <a href="/posts/<%= @post.id%>/check">명단확인</a>
@@ -73,5 +103,15 @@
          <% else%>
          <td></td>
          <%end%>
- |
+
+
+
+<br>
+
+<input type="button" value="Done" onclick="document.getElementById('hidden').style.visibility='hidden'"> 
+<input type="button" value="Re" onclick="document.getElementById('hidden').style.visibility='visible'" > 
+
+<br>
+
 <%= link_to 'Back', posts_path %>
+
