@@ -3,39 +3,56 @@
 <a1> 제목 </a1>
 <div class = "d-flex justify-content-center">
     <ul class="list-group">
-        <li class="list-group-item bg-light" style="width:800px; height:50px;">
+        <li class="cc list-group-item" style="width:800px; height:50px; padding:10px; margin:10px;">
         <%= @freepost.title %></li>
     </ul>
 </div>
 
 
 <a1> 내용 </a1>
-<div class = "d-flex justify-content-center">
+<div class = " d-flex justify-content-center">
     <ul class="list-group">
-        <li class="list-group-item bg-light" style="width:800px; height:400px; padding:20px; margin:20px;">
+        <li class="cc list-group-item" style="width:800px; height:400px; padding:10px; margin:10px;">
         <%= @freepost.content %></li>
     </ul>
 </div>
 
+<div class = " d-flex justify-content-center">
+<table class="table" style="width:800px; padding:20px; margin:20px;">
+  <thead>
+    <tr>
+      <th scope="col">댓글번호</th>
+      <th scope="col">댓글내용</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%@freepost.comments.each do |comment| %>
+      <tr>
+        <th scope="row"><%=comment.id%></th>
+        <td><%=comment.content %></td>
+        <td><%=link_to '댓글삭제',
+          freepost_comment_path(@freepost.id, comment.id), method: 'delete'%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
 
   <div class = "d-flex justify-content-center">
     <%=form_for Comment.new, url:freepost_comments_path(@freepost.id) do |f|%>
       <%=f.label "댓글" %>
-      <%=f.text_field :content, :size=>"101" %> </li> <br>
-      <%=f.submit "작성" %>
+      <%=f.text_field :content, :size=>"94" %> <%=f.submit "작성" %>
       <br>
-        <%@freepost.comments.each do |comment| %>
-        </div>
-        <p class="text-center"><%=comment.content %> <%=link_to '댓글삭제',
-          freepost_comment_path(@freepost.id, comment.id), method: 'delete'%></p>
-          <br>
-        <% end %>
+      <br>
   </div>
+
 
 
 <div class = "button1">
   <div class = "d-flex justify-content-center">
     <%= link_to '게시물수정', edit_freepost_path(@freepost) %> 
+    &nbsp &nbsp &nbsp &nbsp &nbsp
     <%= link_to '뒤로가기', freeposts_path %>
     <% end %>
   </div>

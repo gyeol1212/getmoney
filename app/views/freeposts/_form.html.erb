@@ -11,29 +11,22 @@
     </div>
   <% end %>
 
-<div class="form-group container">
-  <div class="field">
+
+ <div class=" field">
     <%= f.label :title %>
-    <%= f.text_field :title, class: "ff form-control text-center" %>
+    <%= f.text_field :title, class: "cc form-control" %>
+
   </div>
-
-  <div class="field">
-    <%= f.label :content %>
-    <%= f.text_area :content, class: "ff form-control text-center" %>
-  </div>
-
-
   <br>
-  <div class="d-flex justify-content-md-center">  
-    <div class="actions">
-      <button type="submit" class="btn btn-info">
-      제출
-      </button>      
-    </div>
-    &nbsp
-    <button class="btn btn-info">
-      <%= link_to '뒤로', freeposts_path %>
-    </button>
+  <div class=" field">
+    <%= f.label :content %>
+
+    <%= f.text_area :content, class: "cc form-control" %>
+  </div>
+<br>
+  <div class="actions">
+    <%= f.submit %>
+
   </div>
 </div>  
 <% end %>
