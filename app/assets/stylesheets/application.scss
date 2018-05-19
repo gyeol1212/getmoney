@@ -15,25 +15,47 @@ table{
 
 .navi
 {font-family: "Noto Sans KR" ;
-font-weight: 500 ;
-color: white ; 
+font-weight: 300 ;
+color: gainsboro ; 
 }
 
 .navi1
 {font-family: "Noto Sans KR" ;
-font-weight: 700 ;
+font-weight: 400 ;
 font-size: 25px ; 
-color: white ; 
+color: gainsboro ; 
+}
+
+.bt {
+    font-family: "Arvo" ;
+    color: white ;
+    font-weight: 300 ;
+    opacity: 0.8 ;
 }
 
 
+.inf {
+    border-right-color: gray;
+    border-left-color: gray;
+    border-width: 0.5px;
+    border-right-style: solid;
+    border-left-style: solid;
+}
+
+.ft {
+    color: gray ;
+    font-size: 13px ;
+}
+
+
+
 body 
+
 {background-image: url("index_background.jpg");
 background-size: 100%;
 background-color: #566389;
 }
 
-body {background-color: #566389;}
 
 /* unvisited link */
 a:link {
