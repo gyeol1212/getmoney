@@ -38,15 +38,6 @@ ActiveRecord::Schema.define(version: 20180519185525) do
     t.index ["freepost_id"], name: "index_comments_on_freepost_id"
   end
 
-  create_table "divides", force: :cascade do |t|
-    t.integer  "total"
-    t.integer  "members"
-    t.integer  "PostN_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["PostN_id"], name: "index_divides_on_PostN_id"
-  end
-
   create_table "freeposts", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
@@ -77,13 +68,6 @@ ActiveRecord::Schema.define(version: 20180519185525) do
     t.integer  "member"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-  end
-
-  create_table "results", force: :cascade do |t|
-    t.integer  "post_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_results_on_post_id"
   end
 
   create_table "tables", force: :cascade do |t|
