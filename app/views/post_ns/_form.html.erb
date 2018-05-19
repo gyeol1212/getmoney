@@ -11,32 +11,45 @@
     </div>
   <% end %>
 
-  <div class="field">
+<div class="form-group container">
+  <div class="ff field">
     <%= f.label :date %>
-    <%= f.date_select :date %>
+    <br>
+    <%= f.date_select :date, class: "ff form-control" %>
   </div>
 
-  <div class="field">
+  <div class="ff field">
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: "ff form-control" %>
   </div>
 
-  <div class="field">
+  <div class="ff field">
     <%= f.label :total_price %>
-    <%= f.number_field :total_price %>
+    <%= f.number_field :total_price, class: "ff form-control" %>
   </div>
 
-  <div class="field">
+  <div class="ff field">
     <%= f.label :member %>
-    <%= f.number_field :member %>
+    <%= f.number_field :member, class: "ff form-control" %>
   </div>
 
-  <div class="field">
+  <div class="ff field">
     <%= f.label :etc %>
-    <%= f.text_field :etc %>
+    <%= f.text_field :etc, class: "ff form-control" %>
   </div>
+  
 
-  <div class="actions">
-    <%= f.submit %>
+<br>
+<div class="d-flex">
+    <div class="actions">
+      <button type="submit" class="btn btn-info">
+      제출
+      </button>
+    &nbsp    
+    </div>
+    <button class="btn btn-info">
+      <%= link_to '뒤로', post_ns_path %>
+      </button>
   </div>
+</div>
 <% end %>
