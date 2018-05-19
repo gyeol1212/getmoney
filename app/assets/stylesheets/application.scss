@@ -8,8 +8,10 @@ table{
 }
 
 .ff{
-    background-color: transparent !important;
-    color: white !important;
+    background-color: white !important;
+    opacity: 0.5 ;
+    color: black !important;
+    font-weight:bold ;
     }
 
 .undernavhr{
@@ -39,6 +41,11 @@ color: gainsboro ;
     color: white ;
     font-weight: 300 ;
     opacity: 0.8 ;
+}
+
+.topnav {
+    background-color: black ;
+    opacity: 0.5 ;
 }
 
 
