@@ -13,38 +13,38 @@
 
 <div class="form-group container">
   <div class="field">
-    <%= f.label :date %>
+    <%= f.label :기획날짜 %>
     <br>
-    <%= f.date_select :date, class: "ff form-control"%>
+    <%= f.date_select :date, class: "ff form-control text-center"%>
   </div>
   <br>
   <div class="field">
-    <%= f.label :title, class: "text-left" %>
-    <%= f.text_field :title, class: "ff form-control text-center", value: "엠티"  %>
+    <%= f.label :기획제목 %>
+    <%= f.text_field :title, class: "ff form-control text-center", placeholder: "엠티"  %>
   </div>
   <br>
     <div class="field">
-    <%= f.label :member, class: "ff text-left" %>
-    <%= f.number_field :member, class: "ff form-control" %>
+    <%= f.label :사람수 %>
+    <%= f.number_field :member, class: "ff form-control text-center", placeholder: "10" %>
   </div>
   <br>
   <div class="field">
-    <%= f.label :etc, class: "text-left" %>
-    <%= f.text_field :etc, class: "ff form-control text-center" %>
+    <%= f.label :메모, class: "text-left" %>
+    <%= f.text_field :etc, class: "ff form-control text-center", placeholder: "멋쟁이사자처럼 뒷풀이" %>
   </div>
   <br>
-  </div>
-    <button class="btn btn-info">
+  <div class="d-flex justify-content-md-center">
+    
+      <button class="btn btn-info">
       <%= link_to '뒤로', posts_path %>
       </button>
-  </div>
+    
   &nbsp  
-  <div class="d-flex justify-content-md-center">
     <div class="actions">
       <button type="submit" class="btn btn-info">
       제출
       </button>
-      
+  </div>    
     
 <% end %>
 </div>
