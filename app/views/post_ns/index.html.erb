@@ -4,6 +4,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th>No.</th>
       <th>Date</th>
       <th>Title</th>
       <th>Etc</th>
@@ -14,6 +15,7 @@
   <tbody>
     <% @post_ns.each do |post_n| %>
       <tr>
+        <td><%= post_n.id%></td>
         <td><%= post_n.date %></td>
         <td><%= post_n.title %></td>
         <td><%= post_n.etc %></td>
