@@ -1,3 +1,4 @@
+<div class = "container">
 <h1> 다른 사람의 기획안 보기 </h1>
 
 <table class = "table">
@@ -23,3 +24,9 @@
 <br>
 
 <%= link_to 'New Post', new_post_path %><br>
+
+<%= form_tag(all_posts_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+<%= submit_tag "Search" %>
+<% end %>
+</div>
