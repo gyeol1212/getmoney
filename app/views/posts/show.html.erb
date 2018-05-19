@@ -111,7 +111,11 @@
  
 
 
-<button class="btn btn-info"><a href="/posts/<%= @post.id%>/check">명단확인</a></button>
+<button class="btn bgradius2 border-white bg-transparent text-white"><a href="/posts/<%= @post.id%>/check">명단확인</a></button>
+&nbsp
+<input type="button"  class="btn bgradius2 border-white bg-transparent text-white" value="Done" onclick="document.getElementById('hidden').style.visibility='hidden'"> 
+&nbsp
+<input type="button"  class="btn bgradius2 border-white bg-transparent text-white" value="Re" onclick="document.getElementById('hidden').style.visibility='visible'" > 
 <br>
 <br>
 
@@ -119,6 +123,3 @@
 </div>
 <br>
 
-<input type="button" class="btn btn-info" value="Done" onclick="document.getElementById('hidden').style.visibility='hidden'"> 
-&nbsp
-<input type="button" class="btn btn-info" value="Re" onclick="document.getElementById('hidden').style.visibility='visible'" > 

@@ -1,14 +1,10 @@
 
-<div class="container text-white ">
-<h1>자유게시판</h1>
-
-
-
-<%= form_tag(freeposts_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-<%= submit_tag "검색" %>
-<% end %>
 <br>
+<br>
+<div class="container text-white ">
+<h1>Board</h1>
+
+
 
 <table class="table">
   <thead>
@@ -33,6 +29,12 @@
 
 <br>
 
-<%= link_to '새 글 작성', new_freepost_path %>
+<%= link_to '새로운 글 쓰기', new_freepost_path %>
+<br><br>
+<%= form_tag(freeposts_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+<%= submit_tag "검색" %>
+<% end %> 
+
 
 </div>
