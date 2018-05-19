@@ -1,5 +1,8 @@
+
+<br>
+<br>
 <div class="container">
-<h1>Posts</h1>
+<h1>Budget Plan</h1>
 
 <table class="table">
   <thead>
@@ -7,8 +10,6 @@
       <th>날짜</th>
       <th>제목</th>
       <th>총액</th>
-     
-      
     </tr>
   </thead>
 
@@ -17,8 +18,7 @@
       <tr class="tabletext">
         <td><%= post.date %></td>
         <td><%= link_to post.title, post %></td>
-        <td><%= post.tables.sum("total") %></td>
-       
+        <td><%= post.tables.sum("total") %></td>      
       </tr>
     <% end %>
   </tbody>
@@ -26,6 +26,6 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path %><br>
-<a href="/posts/all">다른 사람이 쓴 것도 보기</a>
+<%= link_to '새로운 예산 기획 짜기', new_post_path %><br>
+<a href="/posts/all">다른 사람 예산 기획 보기</a>
 </div>

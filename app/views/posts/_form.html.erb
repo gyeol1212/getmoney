@@ -12,39 +12,42 @@
   <% end %>
 
 <div class="form-group container">
-  <div class="field">
-    <%= f.label :date %>
+  <div class="field mx-auto" style="width:400px">
+    <%= f.label :기획날짜 %>
     <br>
     <%= f.date_select :date, class: "ff form-control"%>
   </div>
   <br>
-  <div class="field">
-    <%= f.label :title, class: "text-left" %>
-    <%= f.text_field :title, class: "ff form-control text-center", value: "엠티"  %>
+    <div class="field mx-auto" style="width:400px">
+    <%= f.label :기획활동, class: "text-left" %>
+    <%= f.text_field :title, class: "ff form-control text-center", placeholder: "겨울MT"  %>
   </div>
   <br>
-    <div class="field">
-    <%= f.label :member, class: "ff text-left" %>
-    <%= f.number_field :member, class: "ff form-control" %>
+      <div class="field mx-auto" style="width:400px">
+    <%= f.label :인원수, class: "text-left" %>
+    <%= f.number_field :member, class: "ff form-control text-center", placeholder: "4" %>
   </div>
   <br>
-  <div class="field">
-    <%= f.label :etc, class: "text-left" %>
-    <%= f.text_field :etc, class: "ff form-control text-center" %>
+    <div class="field mx-auto" style="width:400px">
+    <%= f.label :계좌, class: "text-left" %>
+    <%= f.text_field :etc, class: "ff form-control text-center", placeholder: "하나 514-118-123456" %>
   </div>
   <br>
   </div>
+
+  <div class="d-flex justify-content-md-center">
     <button class="btn btn-info">
       <%= link_to '뒤로', posts_path %>
       </button>
-  </div>
-  &nbsp  
-  <div class="d-flex justify-content-md-center">
+  
+  &nbsp&nbsp  &nbsp    
+  
     <div class="actions">
       <button type="submit" class="btn btn-info">
       제출
       </button>
-      
+  </div> 
+  </div>   
     
 <% end %>
 </div>

@@ -1,4 +1,15 @@
+
 <br>
+<div class="container">
+<div class="text-right">
+<% if current_user == @post.user%>
+  <td><%= link_to '수정하기/', edit_post_path(@post) %></td>
+  <td><%= link_to '삭제하기/', @post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <% else%>
+  <td></td>
+<%end%>
+<%= link_to '뒤로 가기', posts_path %>
+</div>
 <br>
 <br>
 <div class="text-center">
@@ -29,6 +40,7 @@
 <% end %>
 </div>
 
+<br>
 
 <table class="table">
 <thead>
@@ -95,27 +107,18 @@
 
 </div>
 <br>
+<br>
  
 
 
-<a href="/posts/<%= @post.id%>/check">명단확인</a>
-
-     <% if current_user == @post.user%>
-        <td><%= link_to '수정하기', edit_post_path(@post) %></td>
-        <td><%= link_to '삭제하기', @post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-         <% else%>
-         <td></td>
-         <%end%>
-
-
-
+<button class="btn btn-info"><a href="/posts/<%= @post.id%>/check">명단확인</a></button>
+<br>
 <br>
 
-<input type="button" value="Done" onclick="document.getElementById('hidden').style.visibility='hidden'"> 
-<input type="button" value="Re" onclick="document.getElementById('hidden').style.visibility='visible'" > 
 
+</div>
 <br>
 
-<%= link_to 'Back', posts_path %>
-
-</box>
+<input type="button" class="btn btn-info" value="Done" onclick="document.getElementById('hidden').style.visibility='hidden'"> 
+&nbsp
+<input type="button" class="btn btn-info" value="Re" onclick="document.getElementById('hidden').style.visibility='visible'" > 
