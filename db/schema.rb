@@ -50,10 +50,8 @@ ActiveRecord::Schema.define(version: 20180518131954) do
     t.string   "title"
     t.string   "etc"
     t.integer  "user_id"
-    t.integer  "total_price"
-    t.integer  "member"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "posts", force: :cascade do |t|
@@ -61,10 +59,8 @@ ActiveRecord::Schema.define(version: 20180518131954) do
     t.string   "title"
     t.string   "etc"
     t.integer  "user_id"
-    t.integer  "total_price"
-    t.integer  "member"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tables", force: :cascade do |t|
