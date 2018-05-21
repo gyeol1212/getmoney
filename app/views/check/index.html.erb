@@ -10,7 +10,7 @@
 
 
 <div class="d-flex justify-content-around font20">
-    <div class="divposition pt-4 pb-5 plr-4 bg-tr d-flex flex-column ml-3 justify-content-start bgradius">
+    <div class="divposition pt-4 pb-5 plr-4 bg-tr d-flex flex-column ml-7 justify-content-start bgradius">
        <p class="font25 mb-5"> 미 입금자 </p>
        
          <% @checks_sort.each do |x| %>
@@ -25,14 +25,14 @@
         
         <% end %>
     </div>
-    <div class="divposition pt-4 pb-5 bg-tr plr-4 d-flex flex-column mr-3 justify-content-start bgradius">
+    <div class="divposition pt-4 pb-5 bg-tr plr-4 d-flex flex-column mr-7 justify-content-start bgradius">
         <p class="font25 mb-5">입금자</p>
         <% @checks.each do |x| %>
             <% if x.money == 1 %>
                 <form action="/posts/<%= @post.id%>/check/no/<%=x.id%>" mehtod="post">
                     <%= x.name %> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-                    <input type="submit" value="취소" class="btn border-white bg-transparent text-white"> &nbsp
-                    <%= link_to 'x', post_check_path(@post.id,x.id), method: :delete, class: "btn border-white"%>
+                    <input type="submit" value="취소" class="btn btnsize border-white bg-transparent text-white"> &nbsp
+                    <%= link_to 'x', post_check_path(@post.id,x.id), method: :delete, class: "btn btnsize border-white"%>
                     
                 </form>
             <% end %>
